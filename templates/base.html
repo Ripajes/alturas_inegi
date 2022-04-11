@@ -1,0 +1,33 @@
+<!--templates/base.html-->
+{% load static %}
+<html>
+    <head>
+        <title>Django blog</title>
+        
+        <link href="{% static 'css/base.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div>
+            <header>
+                <div class="nav-left">
+                    <h1>
+                        <a href="{% url 'lidar:home' %}">GeoDjango App</a>
+                    </h1>
+                </div>
+                <div class="nav-left">
+                    <h1>
+                        <a href="{% url 'lidar:map' %}">Map</a>
+                    </h1>
+                </div>
+                {% if user.is_authenticated %}
+                <div class="nav-right">
+                    <a href="{% url 'lidar:update_shape' %}">+ Cargar Shape</a>
+                </div>
+                {% endif %}
+                
+            </header>
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </body>
+</html>

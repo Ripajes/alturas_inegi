@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Lidar Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static 'map.css' %}">
+  <link rel="stylesheet" type="text/css" href="//unpkg.com/leaflet/dist/leaflet.css">
+  <script src="//unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+  <div id="map">
+    <script src="{% static 'map.js' %}"></script>
+  </div>
+</body>
+</html>
+{% endblock content %}
